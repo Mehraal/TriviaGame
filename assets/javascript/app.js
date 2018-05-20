@@ -29,4 +29,58 @@ var marvelQuestion = [{
      question: "Which actor play the Falcon?",
     choices: ["Chris Pratt", "Anthony Macki", "Chadwick Boseman", "Tom Holland"],
     validAnswer: 1
-},
+}, {
+    question: "What year was the first Marvel movie released?",
+    choices: ["2011", "2000", "2008", "1985"],
+    validAnswer: 2
+}
+
+];
+
+$("#start_button").click(function() {
+$(this).hide();
+counter = setInterval(timer, 1000);
+displayTrivia();
+});
+
+function timer() {
+count--;
+if(count <= 0) {
+    clearInterval(count);
+    return;
+}
+
+$("#timer").html("Time remaining:"+ "00:" + count + "secs");
+}
+
+function displayTrivia() {
+$("#question_div").html(marvalQuestion[0].question);
+question++;
+
+
+var choicesArr = marvelQuestion[0].choices;
+var buttonsArr = [];
+
+for(var i = 0; i < choicesArr.length; i++) {
+var button = $("<button>");
+button.text(choicesArr[i]);
+button.attr('data-id', i);
+$('#choices_div').append(button);
+   }
+
+}
+
+$('#choices_div').on('click', 'button', function (e) {
+    userPick = $(this).data("id");
+    marvelQuestion[0].validAnswer;
+    if (userPick != marvelQuestion[0].validAnswer) {
+
+        $('#choices_div').text("Wrong Answer!");
+        incorrectAnswer++;
+
+    } else if (userPick === marvelQuestion[0].validAnswer) {
+        $('#choices_div').text("Correct!!!");
+        correctAnswer++;
+
+    }
+});
