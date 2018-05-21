@@ -37,6 +37,10 @@ var marvelQuestion = [{
 
 ];
 
+window.onload = function () {
+    $("#start").click(timer.start);
+}
+
 $("#start_button").click(function() {
 $(this).hide();
 counter = setInterval(timer, 1000);
