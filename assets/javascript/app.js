@@ -37,9 +37,9 @@ var marvelQuestion = [{
 
 ];
 
-window.onload = function () {
-    $("#start").click(timer.start);
-}
+// window.onload = function () {
+//     $("#start").click(timer.start);
+// }
 
 $("#start_button").click(function() {
 $(this).hide();
