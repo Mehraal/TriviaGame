@@ -1,3 +1,10 @@
+$("#start_button").click(function () {
+    $(this).hide();
+    counter = setInterval(timer, 1000);
+    displayTrivia();
+});
+
+
 var userPick;
 var correctAnswer = 0;
 var incorrectAnswer = 0;
@@ -41,11 +48,11 @@ var marvelQuestion = [{
 //     $("#start").click(timer.start);
 // }
 
-$("#start_button").click(function() {
-$(this).hide();
-counter = setInterval(timer, 1000);
-displayTrivia();
-});
+// $("#start-button").click(function() {
+// $(this).hide();
+// counter = setInterval(timer, 1000);
+// displayTrivia();
+// });
 
 function timer() {
 count--;
