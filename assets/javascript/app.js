@@ -12,7 +12,7 @@ var unAnswer = 0;
 var question = 0;
 var count = 30;
 
-var marvelQuestion = [{
+var marvelQuestions = [{
     question: "Who is the creater of Marvel comics?",
     choices: ["Iron Man", "Stan Lee", "Jon favreu", "Chris Evans"],
     validAnswer: 1
@@ -65,11 +65,11 @@ $("#timer").html("Time remaining:"+ "00:" + count + "secs");
 }
 
 function displayTrivia() {
-$("#question_div").html(marvalQuestion[0].question);
+$("#question_div").html(marvalQuestions[0].question);
 question++;
 
 
-var choicesArr = marvelQuestion[0].choices;
+var choicesArr = marvelQuestions[0].choices;
 var buttonsArr = [];
 
 for(var i = 0; i < choicesArr.length; i++) {
